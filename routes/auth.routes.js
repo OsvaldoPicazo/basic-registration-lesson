@@ -26,7 +26,7 @@ router.post("/signup", (req, res) => {
       console.log('hashed password: ', resultFromHash)
       return User.create({username, email, passwordHash: resultFromHash})
       .then(resultFromUserCreate => res.redirect('/userProfile'))
-      .catch(error => console.log(error))
+      .catch(error => console.log('user was not created'))
     })
     .catch(error => console.log(error))
 })
